@@ -1,0 +1,669 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* CSS Document */
+/* general */
+html{
+    width: 100%;
+    height: fit-content;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+	font-size:20px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.right{
+    float: right;
+}
+.left{
+    float: left;
+}
+
+/* navigator */
+nav{
+	height:auto;
+	width:100%;
+	background:white;
+	display:inline-block;
+	position: fixed;
+	box-shadow: 0 0 0.2em 0.2em black;
+	z-index:1;
+
+}
+nav .logo{
+    width: 10em;
+	position:relative;
+	margin:0.3em 1em;
+	float:left;
+    cursor: pointer;
+}
+nav #menu, nav input, nav #menuDrop, nav #close{
+    display: none;
+}
+/*the ul will have a height of 1.8em we need only a margin of 1.6em to center*/
+nav ul {
+	float:right;
+	position:relative;
+	width:25em;
+	text-decoration: none;
+	color:black;
+	list-style: none;
+	font-size:1em;
+	text-align: center;
+	text-transform: uppercase;
+	margin:1.6em 0;
+}
+nav ul li{
+	float:left;
+    position: relative;
+	margin-right:2em;
+	font-weight:700;
+	cursor: pointer;
+}
+nav ul li:hover{
+    color: gray;
+}
+nav ul li a{
+    color: inherit;
+    text-decoration: none;
+}
+nav ul li::after{
+    content: '';
+    display: block;
+    width: 0%;
+    height:2px;
+    background: gray;
+    margin: auto;
+    margin-top: 0.5px;
+    transition: 1s;
+}
+nav ul li:hover::after{
+    width: 100%;
+}
+#dropdown{
+	display:none;
+    background-color: white;
+    color: black;
+    border-radius: 0.3em;
+    box-shadow: 0 0 0.5em black;
+    position: absolute;
+	height:auto;
+	text-align:left;
+	width:10em;
+	margin:0;
+    margin-left: -2em;
+    margin-top: .25em;
+	top:1em;
+}
+#albums:hover #dropdown{
+	display:block;
+}
+#dropdown li{
+    margin: 0.4em;
+    display: block;
+}
+
+
+
+
+
+/* index page styling */
+    /* hero */
+    .hero, .about{
+		position:relative;
+		width:100%;
+		height:auto;
+		padding: 3em 0;
+        padding-top: 5em;
+    }
+    .hero .img_container, .about img{
+        width: 40%;
+		position: relative;
+		margin-left:5%;
+		vertical-align: middle;
+        display: inline-block;
+        transition: 1s;
+    }
+    .hero img{
+        width: 100%;
+        vertical-align: middle;
+    }
+    .hero img:hover, .about img:hover{
+        opacity: 0.8;
+        scale: 1.05;
+    }
+    .hero .textbox{
+		margin: 0 5%;
+        color: white;
+        width: 35%;
+        text-align: left;
+        vertical-align: middle;
+        display: inline-block;
+    }
+    .hero .textbox p{
+        font-size: 1.2em;
+        line-height: 160%;
+    }
+
+    /* section */
+    section{
+        padding: 5% 10px;
+        text-align: center;
+    }
+    section.dark{
+        background-color: black;
+        color: white;
+    }
+    section.light{
+        background-color: white;
+        color: black;
+    }
+    section img{
+        width: 80%;
+        margin: 1em 0px;
+    }
+    section iframe{
+        margin: 2.5em 0;
+        aspect-ratio: 16/9;
+        width: 80%;
+        border-radius: 10px;
+    }
+    section .captions{
+        width: 80%;
+        margin: auto;
+        font-size:1em;
+        line-height: 160%;
+    }
+    #subscribe{
+        text-align: center;
+        margin:1em 0;
+
+    }
+    #subscribe a{
+        text-decoration: none;
+        color:white;
+        transition:0.7s;
+    }
+    #subscribe:hover a{
+        color: gray;
+    }
+    #subscribe a::after{
+        content: '';
+        display: block;
+        width: 0%;
+        height:2px;
+        background: gray;
+        margin: auto;
+        margin-top: 0.5px;
+        transition: 1s;
+    }
+    #subscribe:hover a::after{
+        width:9em;
+    }
+
+
+/* albums styling */
+.album_section{
+    justify-content: space-evenly;
+    min-height: 80vh;
+    padding: 2.5%;
+    padding-top: 7em;
+    text-align: center;
+}
+
+.album_section .img_container{
+    width: 35%;
+    display: inline-block;
+	vertical-align: middle;
+}
+.album_section img{
+    width: 100%;
+    transition: 1s;
+}
+.album_section img:hover{
+    opacity: 0.8;
+    scale: 1.05;
+}
+.album_section .textbox{
+    display: inline-block;
+    color: white;
+    width: 50%;
+    margin: 0 2em;
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align:top;
+}
+.album_section .textbox h1 a{
+    text-decoration:none;
+    color:white;
+    transition: 0.7s;
+}
+.album_section .textbox h1 a:hover{
+    text-decoration-line: underline;
+    color:grey;
+}
+.album_section .textbox p{
+    margin: 3% 0;
+    font-size: 1.3em;
+    line-height: 160%;
+}
+
+.album_section .trackline h2{
+    display: inline-block;
+    width:auto;
+    margin-right: 2em;
+    vertical-align: middle;
+    margin: 1em 0;
+}
+.album_section .trackline audio{
+    vertical-align: middle;
+    width:100%;
+    height: 2.7em;
+}
+.album_section .trackline h2 a{
+    text-decoration: none;
+    color:white;
+    transition:0.7s;
+ }
+
+.album_section .trackline a:hover{
+text-decoration: underline;
+color:grey;
+}
+
+
+
+
+/* submission page */
+.subscription{
+    padding-top: 7em;
+    text-transform: capitalize;
+    height:auto;
+    width:100%;
+}
+form{
+    width: 50%;
+    margin: 1em auto;
+    padding: .5em 1em;
+    background-color: white;
+    border-radius: 0.25em;
+    border-top-right-radius: 5em;
+    border-bottom-left-radius: 5em;
+    color: black;
+}
+form *{
+    vertical-align: middle;
+}
+form input{
+    width: 50%;
+    padding: 1em 1em;
+    margin: 1em 0;
+    outline: none;
+    border: none;
+    border-radius: 0.5em;
+    background-color: black;
+    color: white;
+}
+form label{
+    display: inline-block;
+    width: 9em;
+    font-size:1em;
+    font-weight: 800;
+}
+form label::after{
+    content: ':';
+}
+button{
+    font-size: 1em;
+    padding: .8em 2em;
+    border-radius: 50px;
+    background-color: black;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .1em;
+    transition: 1.5s;
+    display: block;
+    margin: .7em auto;
+    cursor: pointer;
+}
+/* form button with gradient effect animation */
+button{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-size: 300% 100%;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, #000, rgb(81, 81, 81), #575757, #000);
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.5);
+}
+button:hover {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer with svgs for social links and cpright*/
+footer{
+    background-color: white;
+    width:100%;
+    height: 4.5em;
+    padding-top: 1.5em;
+	font-size:1em;
+}
+
+footer #copy{
+    margin-left: 2%;
+}
+footer .socials{
+	display:block;
+    height: 80%;
+    margin-right:2%;
+}
+footer #number{
+    display: block;
+    margin-bottom: .5em;
+    margin-top: -.7em;
+}
+footer .links{
+    height: 45%;
+}
+footer a{
+    margin: 0 .5em;
+    text-decoration: none;
+}
+footer svg{
+    width: 1.2em;
+    fill: black;
+    transition: .7s;
+}
+footer svg:hover{
+    fill: rgb(62, 62, 62);
+}
+
+
+
+/* the wave is to smoothen transition between sections */
+.wave{
+    width: 100%;
+	height:auto;
+	margin:-1em 0;
+}
+
+
+
+/* events page */
+    /* carousel */
+    #carouselExampleIndicators{
+        height: 90vh;
+        margin: auto;
+    }
+    #carouselExampleIndicators img{
+        width: 100%;
+    }
+#eventsList li{
+    font-size: 1.2em;
+    display: block;
+    width: 70%;
+    margin: 1em auto;
+    text-align: right;
+    text-transform: capitalize;
+}
+#eventsList .date{
+    float: left;
+}
+#eventsList button{
+    display: inline;
+    border-radius: 30px;
+    text-transform: inherit;
+}
+#eventsList li *{
+    margin: 1em 1.5em;
+}
+
+/* about page */
+#musicWave{
+    margin-top: 400px;
+    width: 100%;
+}
+
+.about p{
+    display: inline-block;
+    width: 40%;
+    line-height: 2.5em;
+    text-wrap: balance;
+    margin: 0 1.5em;
+    vertical-align: middle;
+}
+.about.right img{
+    float: right;
+    margin-right: 5%;
+}
+.about.right p {
+    margin-top: 15%;
+}
+
+
+
+
+/* resposivity */
+@media only screen and (max-width: 1000px){
+    body{
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 786px){
+    body{
+        font-size: 15px;
+		min-height: 100vh;
+    }
+	body footer{
+		bottom:0;
+		
+    }
+	.album_section{
+		min-height: 80vh;
+	}
+	
+
+}
+/* the lowest phone width is 320px, I took that into consideration */
+@media only screen and (max-width: 630px){
+    body{
+        font-size: 12px;
+    }
+    nav{
+        height:auto;
+    }
+    nav.logo{
+        display: block;
+        position: static;
+    }
+    /* menu */
+        nav #menu{
+            display: block;
+            height: 3em;
+            margin-top: .3em;
+            margin-right: 1.5em;
+            float: right;
+        }
+        nav input{
+            position: absolute;
+            z-index: 99;
+            display: block;
+            height: 2.4em;
+            width: 2.5em;
+            top: .45em;
+            right: 1.25em;
+            opacity: -1;
+        }
+        nav ul, nav ul li{
+            overflow: hidden;
+            transition: 1s;
+        }
+        nav input:checked ~ ul{
+            width: 100%;
+            background-color: white;
+            overflow: hidden;
+            position: absolute;
+            margin: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+        }
+        nav input:checked ~ ul li{
+            float: none;
+            margin: 10vh 0;
+            font-size: 2em;
+        }
+        nav input:not(:checked) ~ ul{
+            width: 0%;
+            height: 0;
+        }
+        nav #close{
+            height: 3em;
+            top: .3em;
+            right: 1.8em;
+            position: absolute;
+        }
+        nav input:checked ~ #close{
+            display: block;
+            z-index: 1;
+        }
+        nav input:not(:checked) ~ #close{
+            display: none;
+        }
+
+        /* menu dropdown */
+            #dropdown{
+                display:none;
+                background-color: white;
+                color: black;
+                border-radius: 0.3em;
+                box-shadow: 0 0 0.5em black;
+                position: absolute;
+                height:auto;
+                text-align:left;
+                width:10em;
+                margin:0;
+                margin-top: .25em;
+                right: 40%;
+                top: 1em;
+            }
+            #albums:hover #dropdown{
+                display:block;
+            }
+            #dropdown li{
+                margin: 0.4em;
+                display: block;
+            }
+    
+    .hero{
+        display:block;
+        align-items: center;
+    }
+    .hero .img_container
+    {
+        display:block;
+        width:90%;
+        margin:0 5%;
+    }
+    .hero .textbox
+    {
+        display:block;
+        width:90%;
+        margin:1em 5%;
+    }
+
+
+
+
+
+    /* album section */
+    .album_section{
+        align-items: center;
+        text-align: center;
+    }
+    
+    .album_section .img_container{
+        width: 70%;
+        display: block;
+        margin: 0 15%;
+    }
+    .album_section img{
+        width: 100%;
+        transition: 1s;
+    }
+    .album_section img:hover{
+        opacity: 0.8;
+        scale: 1.05;
+    }
+    .album_section .textbox{
+        display: block;
+        width: 70%;
+        margin: 5% 15%;
+        text-align: center;
+        text-transform: capitalize;
+    }
+    .album_section .textbox p{
+        margin: 3% 0;
+    }
+    .album_section .trackline h2{
+        display: inline-block;
+        width: 10em;
+        margin-right: 2em;
+        vertical-align: middle;
+        margin: 1em 0;
+    }
+    .album_section .trackline audio{
+        vertical-align: middle;
+    }
+
+
+
+
+/* submission page */
+.subscription{
+    padding:7em 0;
+    margin:0;
+}
+form{
+    width: 70%;
+    margin:7em auto;
+    padding: 0.5em 0;
+}
+form input{
+    width: 50%;
+    padding: 0.2em 0.3em;
+    margin: 0.1em 0;
+    outline: none;
+    font-size: 1em;
+}
+form label{
+    display: block;
+    margin:1em auto;
+}
+
+}
